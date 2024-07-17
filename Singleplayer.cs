@@ -10,8 +10,7 @@
             while (true)
             {
                 Console.Write("Выберите фигуру (X или O): ");
-                figure = char.Parse(Console.ReadLine());
-                if (figure == 'X' || figure == 'O')
+                if (char.TryParse(Console.ReadLine(), out figure) && (figure == 'X' || figure == 'O'))
                 {
                     break;
                 }
