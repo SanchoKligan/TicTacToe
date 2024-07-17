@@ -2,8 +2,14 @@
 
 internal static class Game
 {
-    private static readonly GameField _gameField = new();
-    private static readonly Player[] _players = new Player[2];
+    private static readonly GameField _gameField;
+    private static readonly Player[] _players;
+
+    static Game()
+    {
+        _gameField = new();
+        _players = new Player[2];
+    }
 
     public static void SinglePlay()
     {
