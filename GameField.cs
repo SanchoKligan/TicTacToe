@@ -2,7 +2,7 @@
 
 internal class GameField
 {
-    private char[] _cells;
+    private readonly char[] _cells;
 
     public GameField()
     {
