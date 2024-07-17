@@ -6,7 +6,7 @@ internal class Human(string name, char figure) : Player(name, figure)
     {
         int x = 2, y = 2, cell = 0;
         Console.Clear();
-        Console.WriteLine("Ход игрока \"" + Name + "\":");
+        Console.WriteLine("Ход игрока \"" + _name + "\":");
         gameField.Draw();
         Console.SetCursorPosition(x, y);
         ConsoleKeyInfo keyInfo;
@@ -46,7 +46,7 @@ internal class Human(string name, char figure) : Player(name, figure)
                 case ConsoleKey.Enter:
                     if (!gameField.IsEmptyCell(cell))
                     {
-                        gameField.CellChangeValue(cell, Figure);
+                        gameField.CellChangeValue(cell, _figure);
                     }
                     else
                     {

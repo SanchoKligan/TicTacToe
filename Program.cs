@@ -6,17 +6,20 @@ internal class Program
 {
     static void Main(string[] args)
     {
+        Game game;
         if (args.Length == 1 && args[0] == "-s")
         {
-            Game.SinglePlay();
+            game = new Singleplayer();
         }
         else if (args.Length == 1 && args[0] == "-m")
         {
-            Game.MultiPlay();
+            game = new Multiplayer();
         }
         else
         {
             Console.WriteLine("Введите аргументы (-s для игры с компьютером или -m для игры вдвоём)!");
+            return;
         }
+        game.Run();
     }
 }
