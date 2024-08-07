@@ -4,24 +4,31 @@ internal class GameField
 {
     private readonly char[] _cells;
 
-    public GameField()
+    public int FieldSize { get; }
+
+    public GameField(int fieldSize)
     {
-        _cells =
-        [
-            ' ', ' ', ' ',
-            ' ', ' ', ' ',
-            ' ', ' ', ' '
-        ];
+        FieldSize = fieldSize * fieldSize;
+        _cells = new char[FieldSize];
+        for (int i = 0; i < FieldSize; i++)
+        {
+            _cells[i] = ' ';
+        }
     }
 
-    public void CellChangeValue(int cell, char figure)
+    public char GetCellValue(int cell)
+    {
+        return _cells[cell];
+    }
+
+    public void ChangeCellValue(int cell, char figure)
     {
         _cells[cell] = figure;
     }
 
     public bool IsEmptyCell(int cell)
     {
-        return _cells[cell] != ' ';
+        return _cells[cell] == ' ';
     }
 
     public void Draw()

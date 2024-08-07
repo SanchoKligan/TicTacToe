@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    internal class Multiplayer() : Game()
+    internal class Multiplayer(int fieldSize) : Game(fieldSize)
     {
         public override void Run()
         {

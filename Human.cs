@@ -5,9 +5,6 @@ internal class Human(string name, char figure) : Player(name, figure)
     public override void MakeMove(GameField gameField)
     {
         int x = 2, y = 2, cell = 0;
-        Console.Clear();
-        Console.WriteLine("Ход игрока \"" + _name + "\":");
-        gameField.Draw();
         Console.SetCursorPosition(x, y);
         ConsoleKeyInfo keyInfo;
         do
@@ -44,9 +41,9 @@ internal class Human(string name, char figure) : Player(name, figure)
                     }
                     break;
                 case ConsoleKey.Enter:
-                    if (!gameField.IsEmptyCell(cell))
+                    if (gameField.IsEmptyCell(cell))
                     {
-                        gameField.CellChangeValue(cell, _figure);
+                        gameField.ChangeCellValue(cell, Figure);
                     }
                     else
                     {

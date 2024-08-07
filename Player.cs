@@ -2,8 +2,9 @@
 
 internal abstract class Player(string name, char figure)
 {
-    protected string _name = name;
-    protected char _figure = figure;
+    public string Name { get; } = name;
+
+    public char Figure { get; } = figure;
 
     public abstract void MakeMove(GameField gameField);
 }
